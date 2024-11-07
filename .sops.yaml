@@ -1,0 +1,7 @@
+keys:
+  - &primary age1x5chuhfl46qlyve5wl9gq00d7zs6xmnf9xkvnjr9pmgpazy43prqcusm2q
+creation_rules:
+  - path_regex: Stash/secrets.yaml$
+    key_groups:
+    - age:
+      - *primary
