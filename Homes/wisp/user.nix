@@ -25,6 +25,7 @@
         ".mozilla"
         ".config/vesktop"
         ".config/sops/age"
+        ".ssh"
         ".dots"
       ];
     };
