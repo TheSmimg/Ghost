@@ -47,6 +47,7 @@
       
       steam
       ryujinx
+      bottles
 
       #----| fonts
 
