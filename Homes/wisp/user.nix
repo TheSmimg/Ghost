@@ -25,6 +25,7 @@
         ".mozilla"
         ".config/vesktop"
         ".config/sops/age"
+        ".config/Ryujinx"
         ".ssh"
         ".dots"
       ];
@@ -36,7 +37,7 @@
       firefox
       vesktop
       zoom-us
-      
+
       #----| media
       
       yt-dlp
@@ -45,14 +46,15 @@
       #----| games
       
       steam
-      tree
-      
+      ryujinx
+
       #----| fonts
 
       (nerdfonts.override { fonts = [ "CascadiaCode" "JetBrainsMono" "Mononoki" "Noto" ]; })
       material-design-icons
       material-symbols
       material-icons
+      p7zip
     ];
   };
 

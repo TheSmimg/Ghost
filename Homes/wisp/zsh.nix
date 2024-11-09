@@ -2,21 +2,14 @@
   programs.zsh = {
     enable = true;
 
-    plugins = [{
-      name = "powerlevel10k";
-      src = pkgs.zsh-powerlevel10k;
-      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    };
-
-    {
-      name = "p10k";
-      src = ./apps/zsh;
-      file = "p10k.zsh";
-    };
-    ];
-
     oh-my-zsh = {
-      
+      enable = true;
+      plugins = [ "git" ];
+      theme = ''
+      # -*- sh -*- vim:set ft=sh ai et sw=2 sts=2:
+      autoload -U colors && colors
+      PROMPT='main :: () -> Result<Void()> = '
+      '';
     };
   };
 }

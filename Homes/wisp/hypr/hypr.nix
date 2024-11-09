@@ -4,7 +4,9 @@
   monitors = profile.hardware.monitors;
 in {
   imports = [ ./rofi.nix ./lock.nix ./wbar.nix ];
-  home.packages = with pkgs; [ swww ];
+  home.packages = with pkgs; [
+    swww
+  ];
   
   home = {
     pointerCursor = {
