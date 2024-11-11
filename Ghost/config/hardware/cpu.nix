@@ -21,6 +21,14 @@ in {
 
     hardware.cpu.amd.updateMicrocode   = mkIf (cfg == "amd") true;
     hardware.cpu.intel.updateMicrocode = mkIf (cfg == "intel") true;
+    boot = {
+      kernelModules = mkIf (cfg != "generic-x86_64") [ "kvm-${cfg}" ];
+      initrd.availableKernelModules =
+        if cfg == "amd" || cfg == "intel" || cfg == "generic-x86_64"
+          then [ "ahci" "xhci_pci" "usbhid" "uas" "sd_mod" "nvme" ]
+        else
+	  [  ];
+    };
   };
 }
 

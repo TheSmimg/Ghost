@@ -22,10 +22,11 @@
         ../../${baseConfig}
         ../../${hostConfig}
         inputs.home-manager.nixosModules.home-manager { home-manager = {
-          extraSpecialArgs = { inherit host self user inputs; };
-          useGlobalPkgs    = true;
-          useUserPackages  = true;
-          users.${user} = { pkgs, self, user, inputs, host, ... }: {
+          backupFileExtension  = ".bak";
+          extraSpecialArgs     = { inherit host self user inputs; };
+          useGlobalPkgs        = true;
+          useUserPackages      = true;
+          users.${user}        = { pkgs, self, user, inputs, host, ... }: {
             imports = [ ../../${homeConfig} ];
           };
         };}

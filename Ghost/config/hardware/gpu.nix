@@ -29,6 +29,8 @@ in {
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
+    
+    boot.kernelParams = mkIf (cfg == "nvidia") [ "nvidia_drm.fbdev=1" ];
   };
 }
 
