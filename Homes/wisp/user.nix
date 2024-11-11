@@ -3,6 +3,8 @@
     (inputs.impermanence + "/home-manager.nix")
     ./hypr/hypr.nix
     ./apps/kitty.nix
+
+    ./zsh.nix
   ];
 
   fonts.fontconfig.enable = true;

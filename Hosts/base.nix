@@ -35,6 +35,8 @@
 
   users.users.root.hashedPasswordFile = mkDefault config.sops.secrets."users/root/passwd".path;
 
+  users.defaultUserShell = pkgs.zsh;
+
   nix = {
     extraOptions = ''
       warn-dirty = false
