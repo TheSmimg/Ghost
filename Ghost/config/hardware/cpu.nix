@@ -6,6 +6,7 @@
   validCpuList = [
     "amd"
     "intel"
+    "generic-x86_64"
   ];
 
   cfg = config.profile.hardware.cpu;

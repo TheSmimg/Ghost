@@ -6,6 +6,8 @@ in {
   imports = [ ./rofi.nix ./lock.nix ./wbar.nix ];
   home.packages = with pkgs; [
     swww
+    polkit
+    polkit_gnome
   ];
   
   home = {
@@ -167,7 +169,7 @@ in {
       exec-once = ${pkgs.waybar}/bin/waybar
       exec-once = ${pkgs.hyprpaper}/bin/hyperpaper
       exec-once = ${pkgs.hyprland}/bin/hyprctl setcursor ${cursor} 16
-      exec-once = ${pkgs.swww}/bin/swww-daemon 
+      exec-once = ${pkgs.swww}/bin/swww-daemon
       exec = ${pkgs.swww}/bin/swww img ${theme.wallpaper}
     ''];
   };

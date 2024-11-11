@@ -22,6 +22,7 @@
         ".local/share/keyring"
         ".local/share/direnv"
         ".local/share/Steam"
+        ".local/share/bottles"
         ".mozilla"
         ".config/vesktop"
         ".config/sops/age"
@@ -32,30 +33,33 @@
     };
 
     packages = with pkgs; [
-      #----| internet
+      #----| Internet
 
       firefox
       vesktop
       zoom-us
+      deluge-gtk
+      protonvpn-gui
 
-      #----| media
+      #----| Media
       
       yt-dlp
       spotify
       
-      #----| games
+      #----| Games
       
       steam
       ryujinx
       bottles
 
-      #----| fonts
+      #----| Fonts
 
       (nerdfonts.override { fonts = [ "CascadiaCode" "JetBrainsMono" "Mononoki" "Noto" ]; })
       material-design-icons
       material-symbols
       material-icons
       p7zip
+      tor-browser-bundle-bin
     ];
   };
 

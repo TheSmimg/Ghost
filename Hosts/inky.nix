@@ -63,9 +63,9 @@
   };
 
   users.users.wisp.description = "Willow Bracker";
-
-  system.stateVersion  = "24.05";
-  networking.hostId    = "8752bce0";
-  time.timeZone        = "America/New_York";
+  
+  system.stateVersion     = "24.05";
+  networking.hostId       = "8752bce0";
+  time.timeZone           = "America/New_York";
 }
 

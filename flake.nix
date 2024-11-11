@@ -22,10 +22,19 @@
 
     lib = (import ./Ghost/library args);
   in {
-    nixosConfigurations.inky = with lib; with builtins; lib.mkHost {
-      inputs  = self.inputs;
-      host    = "inky";
-      user    = "wisp";
+    nixosConfigurations = {
+      inky = with lib; with builtins; mkHost {
+        inputs  = self.inputs;
+        host    = "inky";
+        user    = "wisp";
+      };
+
+      clyde = with lib; with builtins; mkImage {
+        modules = [ "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix" ];
+        inputs  = self.inputs;
+        host = "clyde";
+        user = "wisp";
+      };
     };
   };
 }

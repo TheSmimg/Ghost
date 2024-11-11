@@ -1,4 +1,4 @@
-{ options, config, self, user, lib, pkgs, ... }: with lib; with self.lib; {
+{ options, config, self, user, lib, pkgs, host, ... }: with lib; with self.lib; {
   sops.defaultSopsFile = ../Stash/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/nix/dat/home/${user}/.config/sops/age/keys.txt";
@@ -30,10 +30,10 @@
     group               = "users";
     home                = "/home/${user}";
     uid                 = 1000;
-    hashedPasswordFile  = config.sops.secrets."users/${user}/passwd".path;
+    hashedPasswordFile  = mkDefault config.sops.secrets."users/${user}/passwd".path;
   };
 
-  users.users.root.hashedPasswordFile = config.sops.secrets."users/root/passwd".path;
+  users.users.root.hashedPasswordFile = mkDefault config.sops.secrets."users/root/passwd".path;
 
   nix = {
     extraOptions = ''
@@ -56,6 +56,7 @@
   nixpkgs.config.allowUnfree = true;
   programs.fuse.userAllowOther = true;
   networking.networkmanager.enable = true;
+  networking.wireless.enable = false;
   hardware.enableRedistributableFirmware  = mkDefault true;
 }
 

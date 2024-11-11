@@ -6,6 +6,7 @@
   validGpuList = [
     "amd"
     "nvidia"
+    "generic"
   ];
   
   cfg = config.profile.hardware.gpu;

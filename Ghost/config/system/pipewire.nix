@@ -6,17 +6,15 @@
   role = config.profile.role;
 in {
   config = {
-    assertions = [
-      { assertion = ((role == "desktop") && (cfg == true)); message = "Cannot use pipewire without desktop role"; }
-    ];
+    assertions = lib.mkIf (cfg) [{ assertion = ((role == "desktop") && (cfg == true)); message = "Cannot use pipewire without desktop role"; }];
 
-    hardware.pulseaudio.enable = !(cfg);
-    security.rtkit.enable = cfg;
+    security.rtkit.enable = true;
+    hardware.pulseaudio.enable = mkIf (cfg) false;
     services.pipewire = mkIf (cfg) {
-      enable             = true;
-      pulse.enable       = true;
-      alsa.enable        = true;
-      alsa.support32Bit  = true;
+      enable             = (cfg);
+      pulse.enable       = (cfg);
+      alsa.enable        = (cfg);
+      alsa.support32Bit  = (cfg);
     };
   };
 }

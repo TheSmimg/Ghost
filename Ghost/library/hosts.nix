@@ -4,6 +4,7 @@
     , host
     , user
     , nixpkgs ? inputs.nixpkgs
+    , modules ? []
     , system  ? "x86_64-linux"
   }: let
     baseConfig  = "Hosts/base.nix";
@@ -28,7 +29,18 @@
             imports = [ ../../${homeConfig} ];
           };
         };}
-      ];
+      ] ++ modules;
     };
+  
+  mkImage = {
+    inputs
+    , host
+    , user
+    , nixpkgs ? inputs.nixpkgs
+    , modules ? [ (inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix") ]
+    , system  ? "x86_64-linux"
+  }: mkHost {
+    inherit inputs host user nixpkgs modules system;
+  };
 }
 
