@@ -9,7 +9,7 @@
         mode     = "auto";
       }];
     };
-    system   = [ "hyprland" "systemd" ];
+    system   = [ "hyprland" ];
     theme    = (import ../Ghost/config/themes/catppuccin/theme.nix);
     role     = "server";
   };
