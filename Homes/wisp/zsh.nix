@@ -38,7 +38,13 @@ in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    initExtra = ''
+      bindkey '\t' autosuggest-accept
+      bindkey '\t\t' complete-word
+    '';
+
     oh-my-zsh = {
       enable  = true;
       plugins = [ "git" ];
