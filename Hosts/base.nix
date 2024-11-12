@@ -2,6 +2,7 @@
   sops.defaultSopsFile = ../Stash/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/nix/dat/home/${user}/.config/sops/age/keys.txt";
+  sops.gnupg.sshKeyPaths = [];
 
   environment.systemPackages = with pkgs; [
     neovim
