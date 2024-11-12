@@ -9,7 +9,7 @@ in {
       bold_font = "auto";
       italic_font = "auto";
       enable_audio_bell = false;
-      window_padding_width = 25;
+      window_padding_width = 10;
       font_size = 12.0;
       confirm_os_window_close = 0;
     };
