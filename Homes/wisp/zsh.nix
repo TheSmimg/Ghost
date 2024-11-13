@@ -22,7 +22,7 @@
   ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}"
   ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
   ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[yellow]✗%{$reset_color%}"
-  ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]✓%{$reset_color%}"  
+  ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]✓%{$reset_color%}"
   '';
   
   custom-zsh-themes = pkgs.stdenv.mkDerivation {
@@ -40,10 +40,6 @@ in {
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initExtra = ''
-      bindkey '\t' autosuggest-accept
-      bindkey '\t\t' complete-word
-    '';
 
     oh-my-zsh = {
       enable  = true;
