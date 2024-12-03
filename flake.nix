@@ -23,9 +23,9 @@
     lib = (import ./Ghost/library args);
   in {
     nixosConfigurations = {
-      tethys = with lib; with builtins; mkHost {
+      mimas = with lib; with builtins; mkHost {
         inputs  = self.inputs;
-        host    = "tethys";
+        host    = "mimas";
         user    = "marley";
       };
     };

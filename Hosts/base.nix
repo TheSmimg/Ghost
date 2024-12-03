@@ -1,7 +1,7 @@
 { options, config, self, user, lib, pkgs, host, ... }: with lib; with self.lib; {
   sops.defaultSopsFile = ../Stash/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/nix/dat/home/${user}/.config/sops/age/keys.txt";
+  sops.age.keyFile = "/nix/persist/home/${user}/.config/sops/age/keys.txt";
   sops.gnupg.sshKeyPaths = [];
 
   environment.systemPackages = with pkgs; [

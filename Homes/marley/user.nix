@@ -8,7 +8,7 @@
   fonts.fontconfig.enable = true;
 
   home = {
-    persistence."/nix/data/home/marley" = {
+    persistence."/nix/persist/home/marley" = {
       allowOther = true;
       directories = [
         "Desktop"
